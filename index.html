@@ -1,9 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myFirstApp">
 <head>
-	<title>Hello Coursera</title>
+	<meta charset="utf-8">
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<title>My first Angular App</title>
 </head>
 <body>
 	<h1>Hello Coursera Students! I am thrilled about this course!</h1>
+	<h2>My First AngularJS App</h2>
+	<div ng-controller="MyFirstController">
+		{{name}}<br><br>
+		{{sayHello()}}
+		<input type="text" ng-model="name">
+		Inside my input is: {{name}}
+	</div><br>
+
+	<h2>Name Calculator</h2>
+	<div ng-controller="NameCalculatorController">
+		<div>
+			Your Name: 
+			<input type="text"
+			ng-model="name"
+			ng-keyup="displayNumeric();">
+		</div>
+		<div>
+			Total numeric value of person' s name is : {{totalValue}}
+		</div>
+	</div><br>
+
+	<h2>HTML5 Custom Atrributes</h2>
+	<div id="target">
+		<section>
+			Section 1
+			<article>Article 1</article>
+		</section>
+	</div>
+
+	<script type="text/javascript">
+		var elem = document.querySelector("[ng-app]");
+		console.log(elem);
+		console.log(elem.getAttribute('ng-app'));
+	</script>
 </body>
 </html>
